@@ -1,0 +1,68 @@
+[
+  {
+    "element_type": "Button",
+    "element_name": "Be_a_Host",
+    "platform": "web",
+    "element": "(//span[contains(text(), 'Be a Host')])[2]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Fishing_Check_box",
+    "platform": "web",
+    "element": "//div[@title = 'Fishing']//input"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Search_Button",
+    "platform": "web",
+    "element": "(//button)[1]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "fishing_img",
+    "platform": "web",
+    "element": "//h5[contains(text(), 'Fishing Day Hunt')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "book_now_button",
+    "platform": "web",
+    "element": "//button[contains(text(), 'Book now')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "agree_and_pay",
+    "platform": "web",
+    "element": "//button[contains(text(), 'Agree & Pay ')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Terms_condition",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Please check and agree to Outiffer Terms & Conditions to continue with booking.')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "destination",
+    "platform": "web",
+    "element": "//a[contains(text(), 'Destinations')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "mumbai_img",
+    "platform": "web",
+    "element": "//div[contains(text(), 'Mumbai')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "destination_img",
+    "platform": "web",
+    "element": "(//div[@class='card'])[2]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "mumbai_location",
+    "platform": "web",
+    "element": "(//span[@class='imgs'])[5]"
+  }
+]

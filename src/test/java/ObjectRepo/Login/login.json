@@ -1,0 +1,218 @@
+[
+  {
+    "element_type": "Text_box",
+    "element_name": "What",
+    "platform": "web",
+    "element": "//div[contains(text(), 'What')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Where",
+    "platform": "web",
+    "element": "//div[contains(text(), 'Where')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "When",
+    "platform": "web",
+    "element": "//div[contains(text(), 'When')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "1_Guest",
+    "platform": "web",
+    "element": "//div[contains(text(), '1 Guest')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "submit_button",
+    "platform": "web",
+    "element": "//button[@type='submit']"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Be_a_Host",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Be a Host')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "dropdown_basic",
+    "platform": "web",
+    "element": "//button[@id='dropdown-basic']"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "homeExpList",
+    "platform": "web",
+    "element": "//div[@id='homeExpList']"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Term",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Term')]"
+  },
+  {
+    "element_type": "Link",
+    "element_name": "Term_link",
+    "platform": "web",
+    "element": "//a[contains(text(), 'Term')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Privacy_Policy",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Privacy Policy')]"
+  },
+  {
+    "element_type": "Link",
+    "element_name": "Privacy_Policy_link",
+    "platform": "web",
+    "element": "//a[contains(text(), 'Privacy Policy')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Hosting_Rules",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Hosting Rules')]"
+  },
+  {
+    "element_type": "Link",
+    "element_name": "Hosting_Rules_link",
+    "platform": "web",
+    "element": "//a[contains(text(), 'Hosting Rules')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Resources_Social",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Resources & Social')]"
+  },
+  {
+    "element_type": "Link",
+    "element_name": "Resources_Social_link",
+    "platform": "web",
+    "element": "//a[contains(text(), 'Resources & Social')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Sign_In",
+    "platform": "web",
+    "element": "//h1[contains(text(), 'Sign In')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Email_Address",
+    "platform": "web",
+    "element": "//label[contains(text(), 'Email Address')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "email",
+    "platform": "web",
+    "element": "//input[@name='email']"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Password",
+    "platform": "web",
+    "element": "//div[contains(text(), 'Password')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Password",
+    "platform": "web",
+    "element": "//label[contains(text(), 'Password')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Forgot_Password?",
+    "platform": "web",
+    "element": "//div[contains(text(), 'Forgot Password?')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Forgot_Password?_button",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Forgot Password?')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Sign_In",
+    "platform": "web",
+    "element": "//button[contains(text(), 'Sign In')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "No_account_yet?_Sign_Up",
+    "platform": "web",
+    "element": "//div[contains(text(), 'No account yet? Sign Up')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Sign_Up_button",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Sign Up')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "or_continue_with",
+    "platform": "web",
+    "element": "//span[contains(text(), 'or continue with')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Sign_in_with_facebook",
+    "platform": "web",
+    "element": "//div[contains(text(), 'Sign in with facebook')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "googleSignUp",
+    "platform": "web",
+    "element": "//div[@id='googleSignUp']"
+  },
+  {
+    "element_type": "iframe",
+    "element_name": "gsi_921231_340414",
+    "platform": "web",
+    "element": "//iframe[@id='gsi_921231_340414']"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "Sign_in_with_facebook",
+    "platform": "web",
+    "element": "//div[contains(text(), 'Sign in with facebook')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "Sign_in_with_facebook_button",
+    "platform": "web",
+    "element": "//button[contains(text(), 'Sign in with facebook')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "fb_root",
+    "platform": "web",
+    "element": "//div[@id='fb-root']"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "sign_in_drop_down_button",
+    "platform": "web",
+    "element": "//span[contains(text(), 'Sign In')]"
+  },
+  {
+    "element_type": "Text_box",
+    "element_name": "login_pop_up",
+    "platform": "web",
+    "element": "//div[contains(text(), 'Login Successfully')]"
+  },
+  {
+    "element_type": "Button",
+    "element_name": "what",
+    "platform": "web",
+    "element": "//div[contains(text(), 'What')]"
+  }
+]
