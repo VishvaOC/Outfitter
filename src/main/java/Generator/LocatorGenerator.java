@@ -120,7 +120,7 @@ public class LocatorGenerator {
         } else if (href != null && !href.isEmpty()) {
             xpath.append("[@href='" + href + "']");
         } else {
-            xpath= new StringBuilder("null");
+            xpath = new StringBuilder("//" + tagName);
         }
 
         return xpath.toString().replaceAll("\n"," ");
