@@ -149,7 +149,8 @@ public class LocatorGenerator {
             String[] abcd = link.split("\\/");
             String linkfinal = abcd[abcd.length-1];
             elementName = linkfinal;
-        } else if (href != null && !href.isEmpty() ) {
+        }
+        else if (href != null && !href.isEmpty() ) {
             String[] hrefa = href.split("\\/");
             String hreffinal = hrefa[hrefa.length-1];
             elementName = hreffinal;
