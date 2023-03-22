@@ -46,7 +46,7 @@ public class LocatorGenerator {
         // Create a new instance of the ChromeDriver
 
 
-        System.out.println("Wait,taking all the xpath......");
+        System.out.println("Wait,taking all the xpath ......");
 
         // Navigate to the web page you want to generate XPath for
 
@@ -54,20 +54,20 @@ public class LocatorGenerator {
         List element = xyx.findElements(By.tagName("*"));
         JSONArray testa = new JSONArray();
         for (Object test : element) {
-            if (getXPath((WebElement) test).equalsIgnoreCase("null")) {
+            if (getXPath((WebElement) test).equalsIgnoreCase("null") || getXPath((WebElement) test).equalsIgnoreCase("") || getElementType((WebElement) test) == null ) {
             } else {
                 testa.add(craetjson((WebElement) test));
 
             }
         }
-            try {
-                FileWriter file = new FileWriter(file_name);
-                file.write(testa.toJSONString().replace("\\/","/"));
-                file.flush();
-                System.out.println("Json file generated successfully.   ");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            FileWriter file = new FileWriter(file_name);
+            file.write(testa.toJSONString().replace("\\/","/"));
+            file.flush();
+            System.out.println("Json file generated successfully.   ");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         driver.close();
     }
 
@@ -104,23 +104,27 @@ public class LocatorGenerator {
             href = element.getAttribute("href");
             type = element.getAttribute("type");
             // Build the XPath expression
-            xpath = new StringBuilder("//" + tagName);
+
+            if(xpath.equals(new StringBuilder("//" + tagName)))
+            {
+                System.out.println(" ");
+            }
+
         }
 
         if (id != null && !id.isEmpty()) {
-            xpath.append("[@id='" + id + "']");
+            xpath.append(new StringBuilder("//" + tagName)).append("[@id='" + id + "']");
         } else if (name != null && !name.isEmpty()) {
-            xpath.append("[@name='" + name + "']");
+            xpath.append(new StringBuilder("//" + tagName)).append("[@name='" + name + "']");
         } else if (text != null && !text.isEmpty() && text.length() <= 25) {
-            xpath.append("[contains(text(), '" + text + "')]");
+            xpath.append(new StringBuilder("//" + tagName)).append("[contains(text(), '" + text + "')]");
         } else if (type != null && !type.isEmpty()) {
-            xpath.append("[@type='" + type + "']");}
+            xpath.append(new StringBuilder("//" + tagName)).append("[@type='" + type + "']");}
         else if (src != null && !src.isEmpty()) {
-            xpath.append("[@src='" + src + "']");
+            xpath.append(new StringBuilder("//" + tagName)).append("[@src='" + src + "']");
         } else if (href != null && !href.isEmpty()) {
-            xpath.append("[@href='" + href + "']");
+            xpath.append(new StringBuilder("//" + tagName)).append("[@href='" + href + "']");
         } else {
-            xpath = new StringBuilder("//" + tagName);
         }
 
         return xpath.toString().replaceAll("\n"," ");
@@ -131,7 +135,8 @@ public class LocatorGenerator {
         String text = element.getText();
         String id = element.getAttribute("id");
         String name = element.getAttribute("name");
-
+        String link = element.getAttribute("src");
+        String href = element.getAttribute("href");
         String elementName;
 
         if (name != null && !name.isEmpty()) {
@@ -140,10 +145,19 @@ public class LocatorGenerator {
             elementName = id;
         } else if (text != null && !text.isEmpty() && text.length() <= 25) {
             elementName = text;
-        }else {
+        } else if (link != null && !link.isEmpty() ) {
+            String[] abcd = link.split("\\/");
+            String linkfinal = abcd[abcd.length-1];
+            elementName = linkfinal;
+        } else if (href != null && !href.isEmpty() ) {
+            String[] hrefa = href.split("\\/");
+            String hreffinal = hrefa[hrefa.length-1];
+            elementName = hreffinal;
+        }
+        else {
             elementName = "give_name";
         }
-        return elementName.replaceAll(" ","_").replaceAll("\n","_").replaceAll("&","_").replaceAll("-","_");
+        return elementName.replaceAll(" ","_").replaceAll("\n","_").replaceAll("&","_").replaceAll("-","_").replaceAll(".","_");
     }
 
     public static String getElementType(WebElement element) {
@@ -173,11 +187,12 @@ public class LocatorGenerator {
             element_type = "Drop_down";
         }
 
+
         return element_type;
     }
 
     public  static JSONObject craetjson(WebElement element){
-        JSONObject j = new JSONObject();
+        JSONObject j =new JSONObject();
         j.put("platform", "web");
         j.put("element_type", getElementType(element));
         j.put("element_name", getElementName(element));
