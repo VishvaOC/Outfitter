@@ -53,7 +53,6 @@ public class MethodGenerator extends BaseClass {
         for(int i = 0; i< j.size();i++){
             JSONObject testa = (JSONObject) j.get(i);
             String web_element_type = (String) testa.get("element_type");
-            String web_element = (String) testa.get("element");
             String web_element_name = (String) testa.get("element_name");
 
 
@@ -86,9 +85,16 @@ public class MethodGenerator extends BaseClass {
                         "return flag;\n" +
                         "}";
 
+                String code4 = "public String click_on_"+web_element_name+"_get_text(){\n" +
+                        "String text = driver.findElement(By.xpath(\""+testa.get("element")+"\")).getText(); \n"+
+                        "return text;\n" +
+                        "}";
+
+
                 writer.write(code1);
                 writer.write(code2);
                 writer.write(code3);
+                writer.write(code4);
 
 
             }
@@ -105,10 +111,9 @@ public class MethodGenerator extends BaseClass {
                               "flag = ele.isDisplayed();\n" +
                               "ele.clear();\n" +
                               "ele.sendKeys(text);\n"+
-                        "// logger.info(\"Entered text :\"+text);\n" +
                         "flag = true;\n" +
                         "} catch (Exception e) {\n" +
-                        "System.out.println(\"Location Not found\");\n" +
+                        "System.out.println(\"Locator Not found\");\n" +
                         "flag = false;\n" +
                         "} finally {\n" +
                         " if (flag) { \n" +
@@ -143,11 +148,17 @@ public class MethodGenerator extends BaseClass {
                         "return flag;\n" +
                         "}";
 
+                String code5 = "public String click_on_"+web_element_name+"_get_text(){\n" +
+                        "String text = driver.findElement(By.xpath(\""+testa.get("element")+"\")).getText(); \n"+
+                        "return text;\n" +
+                        "}";
+
 
                 writer.write(code1);
                 writer.write(code2);
                 writer.write(code3);
                 writer.write(code4);
+                writer.write(code5);
 
 
             }
@@ -180,10 +191,16 @@ public class MethodGenerator extends BaseClass {
                         "return flag;\n" +
                         "}";
 
+                String code4 = "public String click_on_"+web_element_name+"_get_text(){\n" +
+                        "String text = driver.findElement(By.xpath(\""+testa.get("element")+"\")).getText(); \n"+
+                        "return text;\n" +
+                        "}";
+
 
                 writer.write(code1);
                 writer.write(code2);
                 writer.write(code3);
+                writer.write(code4);
 
             }
             if(web_element_type.equalsIgnoreCase("iframe")){
@@ -347,11 +364,17 @@ public class MethodGenerator extends BaseClass {
                       "}\n"+
                       "}\n";
 
+                String code6 = "public String click_on_"+web_element_name+"_get_text(){\n" +
+                        "String text = driver.findElement(By.xpath(\""+testa.get("element")+"\")).getText(); \n"+
+                        "return text;\n" +
+                        "}";
+
               writer.write(code1);
               writer.write(code2);
               writer.write(code3);
               writer.write(code4);
               writer.write(code5);
+              writer.write(code6);
           }
             if(web_element_type.equalsIgnoreCase("table")){
 
@@ -366,10 +389,9 @@ public class MethodGenerator extends BaseClass {
                         "flag = ele.isDisplayed();\n" +
                         "ele.clear();\n" +
                         "ele.sendKeys(text);\n"+
-                        "// logger.info(\"Entered text :\"+text);\n" +
                         "flag = true;\n" +
                         "} catch (Exception e) {\n" +
-                        "System.out.println(\"Location Not found\");\n" +
+                        "System.out.println(\"Locator Not found\");\n" +
                         "flag = false;\n" +
                         "} finally {\n" +
                         " if (flag) { \n" +
@@ -421,12 +443,18 @@ public class MethodGenerator extends BaseClass {
                     "return a;\n"+
                 "}\n";
 
+                String code7 = "public String click_on_"+web_element_name+"_get_text(){\n" +
+                        "String text = driver.findElement(By.xpath(\""+testa.get("element")+"\")).getText(); \n"+
+                        "return text;\n" +
+                        "}";
+
                 writer.write(code1);
                 writer.write(code2);
                 writer.write(code3);
                 writer.write(code4);
                 writer.write(code5);
                 writer.write(code6);
+                writer.write(code7);
 
             }
         }
