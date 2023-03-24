@@ -5,6 +5,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -56,7 +57,14 @@ public class LocatorGenerator {
         for (Object test : element) {
             if (getXPath((WebElement) test).equalsIgnoreCase("null") || getXPath((WebElement) test).equalsIgnoreCase("") || getElementType((WebElement) test) == null ) {
             } else {
-                testa.add(craetjson((WebElement) test));
+                try {
+                    System.out.println(getXPath((WebElement) test));
+                    testa.add(craetjson((WebElement) test));
+                } catch (StaleElementReferenceException e){
+                    FileWriter file = new FileWriter(file_name);
+                    file.write(testa.toJSONString().replace("\\/","/"));
+                    file.flush();
+                }
 
             }
         }
@@ -158,7 +166,7 @@ public class LocatorGenerator {
         else {
             elementName = "give_name";
         }
-        return elementName.replaceAll(" ","_").replaceAll("\n","_").replaceAll("&","_").replaceAll("-","_").replaceAll(".","_");
+        return elementName.replaceAll(" ","_").replaceAll("\n","_").replaceAll("&","_").replaceAll("-","_").replaceAll("\\.","_");
     }
 
     public static String getElementType(WebElement element) {
